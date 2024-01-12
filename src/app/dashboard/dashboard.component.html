@@ -97,21 +97,22 @@
 
       <div
         class="sidebar-link"
-        (click)="selectName(names.name1, images.img1, username.user1)"
+        *ngFor="let user of users"
+        (click)="SelectUser(user)"
       >
         <div class="text-box">
           <input type="checkbox" style="height: 31px; width: 15px" />
         </div>
         <div class="side-img">
-          <img src="./assets/sss.jpg" alt="" style="" />
+          <img src="{{ user.profileImg }}" alt="" style="" />
         </div>
         <div class="heading">
-          <p>Swappy Kole</p>
-          <p style="font-weight: lighter; color: gray">@SwappyKole</p>
+          <p>{{ user.name }}</p>
+          <p style="font-weight: lighter; color: gray">{{ user.username }}</p>
         </div>
       </div>
 
-      <div
+      <!-- <div
         class="sidebar-link"
         (click)="selectName(names.name2, images.img2, username.user2)"
       >
@@ -170,7 +171,7 @@
           <p>andi pheklukuwayo</p>
           <p style="font-weight: lighter; color: gray">@andipheklukuwayo</p>
         </div>
-      </div>
+      </div> -->
 
       <!-- <div class="sidebar-link">
         <div class="text-box">
@@ -184,7 +185,7 @@
           <p style="font-weight: lighter; color: gray">@username</p>
         </div>
       </div> -->
-      <div
+      <!-- <div
         class="sidebar-link"
         (click)="selectName(names.name6, images.img1, username.user6)"
       >
@@ -198,7 +199,7 @@
           <p>anrich Nortje</p>
           <p style="font-weight: lighter; color: gray">@anrichNortje</p>
         </div>
-      </div>
+      </div> -->
       <!-- <div
         class="form-check form-switch"
         style="
@@ -294,7 +295,7 @@
             alt=""
             style="font-size: 24px; margin: 0; padding: 0"
           />
-          {{ selectedUser }}@gmail.com
+          {{ selectedMail }}
         </p>
       </div>
 
@@ -503,4 +504,10 @@
       </div>
     </div>
   </div>
+  <!-- <div class="loop" style="background: #ccc" *ngFor="let user of users">
+    <div class="card" (click)="fu(user)">
+      <h1>{{ user.name }}</h1>
+      <p>{{ user.email }} {{ user.username }}</p>
+    </div>
+  </div> -->
 </div>

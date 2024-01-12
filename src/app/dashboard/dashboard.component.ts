@@ -11,29 +11,46 @@ export class DashboardComponent {
   selectedUser = 'userName';
   selectedName = 'chelsea healey';
   selectedImage = './assets/sss.jpg';
-  names: any = {
-    name1: 'Swappy Kole',
-    name2: 'ben hilfanhaus',
-    name3: 'doug bolinger',
-    name4: 'marnus labuschagne',
-    name5: 'andi pheklukuwayo',
-    name6: 'anrich Nortje',
-  };
-  images: any = {
-    img1: './assets/sss.jpg',
-    img2: './assets/images.jpg',
-    img3: './assets/lll.jpg',
-    img4: './assets/4pp.jpg',
-    img5: './assets/Tiny+Avatar.png',
-  };
-  username: any = {
-    user1: 'SwappyKole',
-    user2: 'ben hilfanhaus',
-    user3: 'dougbolinger',
-    user4: 'marnuslabuschagne',
-    user5: 'andipheklukuwayo',
-    user6: 'anrichNortje',
-  };
+  selectedMail = 'King@gmail.com';
+  users = [
+    {
+      name: 'Swappy Kole',
+      profileImg: './assets/sss.jpg',
+      username: 'swappyKole',
+      email: 'swappykole@gmail.com',
+    },
+    {
+      name: 'ben hilfanhaus',
+      profileImg: './assets/images.jpg',
+      username: 'benhilfanhaus',
+      email: 'benhilfanhaus@gmail.com',
+    },
+    {
+      name: 'doug bolinger',
+      profileImg: './assets/lll.jpg',
+      username: 'dougbolinger',
+      email: 'dougbolinger@gmail.com',
+    },
+    {
+      name: 'marnus labuschagne',
+      profileImg: './assets/4pp.jpg',
+      username: 'marnuslabuschagne',
+      email: 'marnuslabuschagne@gmail.com',
+    },
+    {
+      name: 'andi pheklukuwayo',
+      profileImg: './assets/Tiny+Avatar.png',
+      username: 'andipheklukuwayo',
+      email: 'andipheklukuwayo@gmail.com',
+    },
+    {
+      name: 'anrich Nortje',
+      profileImg: './assets/images.jpg',
+      username: 'anrichNortje',
+      email: 'anrichNortje@gmail.com',
+    },
+  ];
+
   public onReady(editor: any) {
     console.log('CKEditor5 Angular Component is ready to use!', editor);
   }
@@ -42,9 +59,10 @@ export class DashboardComponent {
   }
   date = new Date();
 
-  selectName(name: any, image: any, user: any) {
-    this.selectedName = name;
-    this.selectedImage = image;
-    this.selectedUser = user;
+  SelectUser(user: any) {
+    this.selectedName = user.name;
+    this.selectedImage = user.profileImg;
+    this.selectedUser = user.username;
+    this.selectedMail = user.email;
   }
 }
